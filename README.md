@@ -43,6 +43,9 @@
   - 왜 이렇게 풀었는지 궁금한 부분
   - 또 다른 풀이 방식 제시
 - 코드의 일부분에다 코드리뷰를 해도 되고 전체 코드 밑 or PR 하나 밑에다 코멘트 작성으로 리뷰를 해도 됩니다.
+- 코드 리뷰 방식
+1. 소스코드 직접 수정해서 주석으로 코드 리뷰 남기기
+2. closed된 PR 들어가서 comment 남기기
 
 ## 참고 링크
 https://github.com/ellynhan/challenge100-codingtest-study?tab=readme-ov-file#-%EC%B0%B8%EC%97%AC-%EB%B0%A9%EB%B2%95
