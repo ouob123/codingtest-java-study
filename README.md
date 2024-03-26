@@ -14,8 +14,8 @@
 
 ## ✅ commit 규칙
 - commit 메세지: [문제 출처(플랫폼)] 문제 분류 / 문제이름
-- 예시 : ```[PGS] Day1 / 두 수의 합 / 두 수의 차 / 두 수의 몫 / 배열 두 배 만들기
-  ```
+- 예시 :
+- ``` [PGS] Day1 / 두 수의 합 / 두 수의 차 / 두 수의 몫 / 배열 두 배 만들기 ```
 - description: 문제 주소 (option)
 - 터미널에서 작성법:
  ``` git commit -m "[BOJ] Hello World / 브론즈5 / 1분" -m "https://www.acmicpc.net/problem/2557" ```
