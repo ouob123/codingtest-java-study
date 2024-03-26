@@ -13,7 +13,7 @@
 - 폴더명 또는 소스코드 파일명에 콜론 ":" 안됩니다 :D
 
 ## ✅ commit 규칙
-- commit 메세지: [문제 출처(플랫폼)] 문제이름 / 난이도 / 걸린시간
+- commit 메세지: [문제 출처(플랫폼)] 문제이름
 - description: 문제 주소 (option)
 - 터미널에서 작성법:
  ``` git commit -m "[BOJ] Hello World / 브론즈5 / 1분" -m "https://www.acmicpc.net/problem/2557" ```
