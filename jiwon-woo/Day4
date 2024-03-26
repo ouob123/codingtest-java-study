@@ -1,0 +1,72 @@
+//피자 나눠 먹기 (1)
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        
+        if (n%7==0){
+            answer = n/7;
+        } else {
+            answer = n/7 + 1;
+        }
+        return answer;
+    }
+}
+
+//피자 나눠 먹기 (2)
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        
+        // 최대공약수
+        int d = gcd(n, 6);
+        
+        // 최소공배수 (a*b/a와b의 최대공약수)
+        int e = lcm (n, 6);
+        
+        answer = e / 6;
+        
+        return answer;
+        
+    }
+    
+    public static int gcd (int a, int b){
+        if (a%b == 0)
+            return b;
+        return gcd(b, a%b);
+    }
+    
+    public static int lcm (int a, int b){
+        return (a*b) / gcd(a,b);
+    }
+}
+
+//피자 나눠 먹기 (3)
+class Solution {
+    public int solution(int slice, int n) {
+        int answer = 0;
+        
+        if (n % slice == 0){
+            answer = n / slice;
+        } else{
+            answer = n / slice + 1;
+        }
+        return answer;
+    }
+}
+
+//배열의 평균값
+class Solution {
+    public double solution(int[] numbers) {
+        double answer = 0;
+        double length = numbers.length;
+        double sum = 0;
+        
+        for (int i=0; i<length; i++){
+            sum += numbers[i];
+        }
+        
+        answer = sum / length;
+        
+        return answer;
+    }
+}
