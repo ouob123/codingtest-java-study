@@ -1,0 +1,58 @@
+// 나머지 구하기
+class Solution {
+    public int solution(int num1, int num2) {
+        int answer = num1 % num2;
+        return answer;
+    }
+}
+
+// 중앙값 구하기
+import java.util.Arrays;
+class Solution {
+    public int solution(int[] array) {
+        Arrays.sort(array);
+        int answer = array[array.length / 2];
+        return answer;
+    }
+}
+
+// 최빈값 구하기
+class Solution {
+    public int solution(int[] array) {
+        int answer = 0;
+        int max = 0;
+        int frequency[] = new int[1000];
+        
+        for (int i = 0; i < array.length; i++) {
+            frequency[array[i]] ++;
+            if (max < frequency[array[i]]) {
+                max = frequency[array[i]];
+                answer = array[i];
+            }
+        }
+        
+        int cnt = 0;
+        for (int j = 0; j < 1000; j++) {
+            if (max == frequency[j]) cnt++;
+            if (cnt > 1) answer = -1;
+        }
+        return answer;
+    }
+}
+
+// 짝수는 싫어요
+class Solution {
+    public int[] solution(int n) {
+        int[] answer;
+        if (n % 2 == 0) {
+            answer = new int[n / 2];
+        }
+        else {
+            answer = new int[n / 2 + 1];
+        }
+        for (int i = 0; i < answer.length; i++) {
+            answer[i] = 2 * i + 1;
+        }
+        return answer;
+    }
+}
