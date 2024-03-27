@@ -11,5 +11,5 @@ class Solution {
             answer = 4;
         }
         return answer;
-    }
+    } 
 }
