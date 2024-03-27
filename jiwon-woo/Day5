@@ -1,0 +1,58 @@
+//옷가게 할인 받기
+class Solution {
+    public int solution(int price) {
+        double answer = 0;
+        int num1 = 100000;
+        int num2 = 300000;
+        int num3 = 500000;
+        
+        if (price<num1){
+            answer = price;
+        } else if (price >= num1 && price < num2){
+            answer = (double) price * 0.95;
+        } else if (price >= num2 && price < num3){
+            answer = (double) price * 0.9;
+        } else {
+            answer = (double) price * 0.8;
+        }
+        return (int)answer;
+    }
+}
+
+//아이스 아메리카노
+class Solution {
+    public int[] solution(int money) {
+        int[] answer = new int[2];
+        
+        answer[0] = money / 5500;
+        answer[1] = money % 5500;
+        return answer;
+    }
+}
+
+//나이 출력
+class Solution {
+    public int solution(int age) {
+        int answer = 0;
+        
+        answer = 2022 - (age - 1);
+        return answer;
+    }
+}
+
+//배열 뒤집기
+class Solution {
+    public int[] solution(int[] num_list) {
+        int[] answer;
+        int length = num_list.length;
+        answer = new int[length];
+        
+        int j = 0;
+        for (int i=length-1; i>=0; i--){
+            int tmp = num_list[i];
+            answer[j] = tmp;
+            j++;
+        }
+        return answer;
+    }
+}
