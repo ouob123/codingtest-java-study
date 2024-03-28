@@ -1,0 +1,67 @@
+// Day6: 문자열, 반복문, 출력, 배열, 조건문
+//문자열 뒤집기
+class Solution {
+    public String solution(String my_string) {
+        String answer = "";
+
+        int length = my_string.length();
+
+        for(int i=length-1; i>=0; i--){
+            answer+=my_string.charAt(i);
+        }
+
+        return answer;
+    }
+
+}
+//직각삼각형 출력하기
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String str = "";
+
+        for (int i=0; i<n; i++){
+            str += "*";
+            System.out.println(str);
+        }
+
+
+    }
+}
+//짝수 홀수 개수
+class Solution {
+    public int[] solution(int[] num_list) {
+        int[] answer = new int[2];
+        int even = 0;
+        int odd = 0;
+
+        for (int i=0; i<num_list.length; i++){
+            if (num_list[i] % 2 == 0 || num_list[i] == 0){
+                even += 1;
+            } else {
+                odd += 1;
+            }
+        }
+
+        answer[0] = even;
+        answer[1] = odd;
+
+        return answer;
+    }
+}
+//문자 반복 출력하기
+class Solution {
+    public String solution(String my_string, int n) {
+        String answer = "";
+
+        for (int i=0; i<my_string.length(); i++){
+            for (int j=0; j<n; j++){
+                answer += my_string.charAt(i);
+            }
+        }
+        return answer;
+    }
+}
