@@ -1,0 +1,71 @@
+//Day9
+//개미 군단
+class Solution {
+    public int solution(int hp) {
+        int answer = hp / 5;
+        hp %= 5;
+
+        answer += hp / 3;
+        hp %= 3;
+
+        answer += hp / 1;
+
+        return answer;
+    }
+}
+
+//모스부호(1)
+class Solution {
+    public String solution(String letter) {
+        String answer = "";
+        String[] morse = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+        String[] str = letter.split(" ");
+        
+        for (int i=0; i<str.length; i++){
+            for (int j=0; j<morse.length; j++){
+                if (str[i].equals(morse[j])){
+                    char character = (char)(j + 'a');
+                    answer += character;
+                }
+            }
+        }
+        
+        return answer;
+    }
+}
+
+//가위 바위 보
+class Solution {
+    public String solution(String rsp) {
+        String answer = "";
+        
+        for (int i=0; i<rsp.length(); i++){
+            switch (rsp.charAt(i)){
+                case '0':
+                    answer += "5";
+                    break;
+                case '2':
+                    answer += "0";
+                    break;
+                case '5':
+                    answer += "2";
+                    break;
+            }
+            
+        }
+        return answer;
+    }
+}
+
+//구슬을 나누는 경우의 수
+class Solution {
+    public long solution(int balls, int share) {
+        long answer = 0;
+
+        int d = (balls - share) > share ? share : balls - share;
+        if (d == 0) return 1;
+
+        return solution(balls - 1, d - 1) * balls / d;
+    }
+
+}
