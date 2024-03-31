@@ -1,0 +1,49 @@
+// 특정 문자 제거하기
+class Solution {
+    public String solution(String my_string, String letter) {
+        String answer = "";
+        answer = my_string.replace(letter, "");
+        return answer;
+    }
+}
+
+// 각도기
+class Solution {
+    public int solution(int angle) {
+        int answer = 0;
+        
+        if (angle == 180) {
+            answer = 4;
+        } else if (90 < angle && angle < 180) {
+            answer = 3;
+        } else if (angle == 90) {
+            answer = 2;
+        } else if (0 < angle && angle < 90) {
+            answer = 1;
+        } 
+           
+        return answer;
+    }
+}
+
+// 양꼬치
+class Solution {
+    public int solution(int n, int k) {
+        int answer = n*12000 + (k-n/10)*2000;
+        return answer;
+    }
+}
+
+// 짝수의 합
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        for (int i = 1; i <= n; i++) {
+            if (i % 2 == 0) {
+                answer += i;
+            }
+        }
+        return answer;
+    }
+}
+

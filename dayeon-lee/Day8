@@ -1,0 +1,66 @@
+//배열 자르기
+class Solution {
+    public int[] solution(int[] numbers, int num1, int num2) {
+        int[] answer = new int[(num2-num1)+1];
+        for(int i=num1;i<=num2;i++){
+            answer[i-num1] = numbers[i];
+        }
+        return answer;
+    }
+}
+
+//외계행성의 나이
+class Solution {
+    public String solution(int age) {
+        StringBuilder answer = new StringBuilder();
+        while(age > 0){
+            int lastStr = age%10; //마지막 자리수
+            char ageChar = (char) ('a' + lastStr); //int -> char(아스키코드값)
+            answer.insert(0, ageChar); //구한 값을 answer 문자열의 제일 앞으로
+            age = age/10; //다음 자리 처리
+            //마지막 자리부터 처리하기(나머지 이용해서)
+
+        }
+        return answer.toString(); // StringBuilder를 문자열로 변환하여 반환
+    }
+}
+//배열 길이
+//아스키코드
+//자리수를 어떻게 구할 것인가? -> 121/10 -> 12, 121%10 -> 1(마지막 자리)
+
+//진료순서 정하기
+class Solution {
+    public int[] solution(int[] emergency) {
+        int[] answer = new int[emergency.length];
+
+        for(int i = 0; i < answer.length; i++){
+            if(answer[i] != 0){
+                continue;
+            }
+            int idx = 1;
+            for(int j = 0; j < answer.length; j++){
+                if(emergency[i] < emergency[j]){
+                    idx++;
+                }
+            }
+            answer[i] = idx;
+        }
+        return answer;
+    }
+}
+
+//순서쌍의 개수
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        for(int i=1;i<=n;i++){
+            if(n%i == 0){
+                answer++;
+            }
+        }
+        return answer;
+    }
+}
+//20의 약수 -> 1,2,4,5,10,20 총 6개
+//100의 약수 -> 1,2,4,5,10,20,25,50,100 총 9개
+//약수 개수 리턴하기
