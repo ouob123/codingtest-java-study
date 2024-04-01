@@ -1,0 +1,65 @@
+// 점의 위치 구하기
+class Solution {
+    public int solution(int[] dot) {
+        int answer = 0;
+        if (dot[0] > 0) {
+            if (dot[1] > 0) {
+                answer = 1;
+            }
+            else {
+                answer = 4;
+            }
+        }
+        else {
+            if (dot[1] > 0) {
+                answer = 2;
+            }
+            else {
+                answer = 3;
+            }
+        }
+        return answer;
+    }
+}
+
+// 2차원으로 만들기
+class Solution {
+    public int[][] solution(int[] num_list, int n) {
+        int idx = 0;
+        int[][] answer = new int[num_list.length / n][n];
+        for (int i = 0; i < num_list.length / n; i++) {
+            for (int j = 0; j < n; j++) {
+                answer[i][j] = num_list[idx++];
+            }
+        }
+        return answer;
+    }
+}
+
+// 공 던지기
+class Solution {
+    public int solution(int[] numbers, int k) {
+        int answer = numbers[2 * (k - 1) % numbers.length];
+        return answer;
+    }
+}
+
+// 배열 회전시키기
+class Solution {
+    public int[] solution(int[] numbers, String direction) {
+        int[] answer = new int[numbers.length];
+        
+        if(direction.equals("right")){
+            for(int i = 0; i < answer.length - 1; i++){
+                answer[i + 1] = numbers[i];
+            }
+            answer[0] = numbers[numbers.length -1];
+        }else {
+            for(int i = 0; i < answer.length - 1; i++){
+                answer[i] = numbers[i + 1];
+            }
+            answer[answer.length - 1] = numbers[0];
+        }
+        return answer;
+    }
+}
