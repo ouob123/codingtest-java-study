@@ -1,0 +1,64 @@
+// Day11
+
+// 주사위의 개수
+class Solution {
+    public int solution(int[] box, int n) {
+        int answer = (box[0] / n) * (box[1] / n) * (box[2] / n);
+        return answer;
+    }
+}
+
+// 합성수 찾기
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        for (int i = 1; i <= n; i++) {
+            int divisor = 0;
+            for (int j = 1; j <= i; j++) {
+                if (i % j == 0) divisor++;
+            }
+            if (divisor >= 3) answer ++;
+        }
+        return answer;
+    }
+}
+
+// 최댓값 만들기(1)
+class Solution {
+    public int solution(int[] numbers) {
+        int max = 0;
+        for (int i = 0; i < numbers.length-1; i++) {
+            for (int j = i+1; j < numbers.length; j++) {
+                if (max < numbers[i]*numbers[j]) {
+                    max = numbers[i]*numbers[j];
+                }
+            }
+        }
+        return max;
+    }
+}
+
+// 팩토리얼
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        for (int i = 1; i <= 11; i++) {
+            if (factorial(i) > n) {
+                answer = i - 1;
+                break;
+            }
+        }
+        return answer;
+    }
+    
+    public static int factorial(int n) {
+        if (n <= 1) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
+}
+
+
+// 
