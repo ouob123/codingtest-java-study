@@ -1,0 +1,71 @@
+// Day12
+
+// 모음 제거
+class Solution {
+    public String solution(String my_string) {
+        String answer = my_string;
+        String[] vowels = {"a", "e", "i", "o", "u"};
+        
+        for (String s : vowels) {
+            answer = answer.replaceAll(s, "");
+        }
+            
+        return answer;
+    }
+}
+
+// 문자열 정렬하기 (1)
+import java.util.Arrays;
+
+class Solution {
+    public int[] solution(String my_string) {
+        my_string = my_string.replaceAll("[a-z]", "");
+        
+        String[] arr = my_string.split("");
+        int[] answer = new int[arr.length];
+        
+        for (int i = 0; i < arr.length; i++) {
+            answer[i] = Integer.parseInt(arr[i]);
+        }
+        
+        Arrays.sort(answer);
+        
+        return answer;
+    }
+}
+
+// 숨어있는 숫자의 덧셈 (1)
+class Solution {
+    public int solution(String my_string) {
+        int answer = 0;
+        my_string = my_string.replaceAll("[A-Z]", "");
+        my_string = my_string.replaceAll("[a-z]", "");
+        
+        String[] arr = my_string.split("");
+        for (int i = 0; i < arr.length; i++) {
+            answer += Integer.parseInt(arr[i]);
+        }
+        
+        return answer;
+    }
+}
+
+// 소인수분해
+import java.util.ArrayList;
+
+class Solution {
+    public ArrayList solution(int n) {
+        ArrayList answer = new ArrayList<>();
+        
+        for (int i = 2; i <= n; i++) {
+            if (n % i == 0) {
+                while (n % i == 0) {
+                    n /= i;
+                }
+                answer.add(i);
+            }
+        }
+        return answer;
+    }
+}
+
