@@ -1,0 +1,95 @@
+//Day11
+//주사위의 개수
+class Solution {
+    public int solution(int[] box, int n) {
+        int answer = 0;
+        int r;
+        int c;
+        int h;
+        
+        r = box[0] / n;
+        c = box[1] / n;
+        h = box[2] / n;
+        answer = r*c*h;
+        return answer;
+    }
+}
+
+//합성수 찾기
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        
+        for (int i=1; i<=n; i++){
+            if (isComposite(i)){
+                answer += 1;
+            }
+        }
+        return answer;
+    }
+    
+    public boolean isComposite(int n){
+        
+        int count = 0;
+        
+        for (int i=1; i<= n; i++){
+            if (n % i == 0){
+                count ++;
+            }
+        }
+        
+        if (count >= 3){
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+//최댓값 만들기(1)
+class Solution {
+    public int solution(int[] numbers) {
+        int answer = 0;
+        
+        //sort 로 정렬..
+        //아니면 하나씩 값을 바꿔가며 정렬 (공부목적)
+        //오름차순 정렬
+        for (int i=0; i<numbers.length-1; i++){
+            for (int j=i; j<numbers.length; j++){
+                if (numbers[i] > numbers[j]){
+                    int temp = numbers[j];
+                    numbers[j] = numbers[i];
+                    numbers[i] = temp;
+                }
+            }
+        }
+        
+        answer = numbers[numbers.length-1] * numbers[numbers.length-2];
+        
+        return answer;
+    }
+}
+
+//팩토리얼
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        
+        for (int i=10; i>0; i--) {
+            if (Factorial(i) <= n){
+                answer = i;
+                break;
+            }
+        }
+        return answer;
+    }
+    
+    public int Factorial(int num){
+        int sum = 1;
+        for (int j=1; j<=num; j++){
+            sum *= j;
+        }
+        
+        return sum;
+    }
+}
