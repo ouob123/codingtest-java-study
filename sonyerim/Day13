@@ -1,0 +1,62 @@
+// Day13
+
+// 컨트롤 제트
+class Solution {
+    public int solution(String s) {
+        int answer = 0;
+        String[] arr = s.split(" ");
+        
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].equals("Z")) {
+                answer -= Integer.parseInt(arr[i - 1]);
+            } else {
+                answer += Integer.parseInt(arr[i]);
+            }
+        }
+        
+        return answer;
+    }
+}
+
+// 배열 원소의 길이
+class Solution {
+    public int[] solution(String[] strlist) {
+        int[] answer = new int[strlist.length];
+        
+        for (int i = 0; i < strlist.length; i++) {
+            answer[i] = strlist[i].length();
+        }
+        
+        return answer;
+    }
+}
+
+// 중복된 문자 제거
+class Solution {
+    public String solution(String my_string) {
+        String answer = "";
+        
+        for (int i = 0; i < my_string.length(); i++) {
+            if (my_string.indexOf(my_string.charAt(i)) == i) {
+                answer += my_string.charAt(i);
+            }
+        }
+
+        return answer;
+    }
+}
+
+// 삼각형의 완성조건 (1)
+import java.util.Arrays;
+
+class Solution {
+    public int solution(int[] sides) {
+        int answer = 0;
+        Arrays.sort(sides);
+        
+        if (sides[0] + sides[1] > sides[2]) answer = 1;
+        else answer = 2;
+        
+        return answer;
+    }
+}
