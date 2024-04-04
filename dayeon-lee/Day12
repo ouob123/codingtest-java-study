@@ -1,0 +1,81 @@
+//모음 제거
+  class Solution {
+    public String solution(String my_string) {
+        String answer = "";
+        String gather = "aeiou";
+        for(int i=0;i<my_string.length();i++){
+            char currentChar = my_string.charAt(i);
+            if (gather.indexOf(currentChar) == -1){
+                answer += currentChar;
+            }
+        }
+        return answer;
+    }
+}
+
+//문자열 정렬하기 (1)
+import java.util.ArrayList;
+import java.util.Collections;
+
+class Solution {
+    public int[] solution(String my_string) {
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 0; i < my_string.length(); i++) {
+            char currentChar = my_string.charAt(i);
+            if (currentChar >= '0' && currentChar <= '9') {
+                list.add(currentChar - '0');
+            }
+        }
+        Collections.sort(list);
+        // ArrayList를 배열로 변환하여 반환
+        int[] answer = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            answer[i] = list.get(i);
+        }
+        return answer;
+    }
+}
+
+//숨어있는 숫자의 덧셈 (1)
+import java.util.ArrayList;
+import java.util.Collections;
+
+class Solution {
+    public int solution(String my_string) {
+        int answer = 0;
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 0; i < my_string.length(); i++) {
+            char currentChar = my_string.charAt(i);
+            if (currentChar >= '0' && currentChar <= '9') {
+                list.add(currentChar - '0');
+            }
+        }
+        for(int j=0;j<list.size();j++){
+            answer += list.get(j);
+        }
+        return answer;
+    }
+}
+
+//소인수분해
+import java.util.ArrayList;
+
+class Solution {
+    public int[] solution(int n) {
+        ArrayList <Integer> list = new ArrayList<>();
+        for(int i=2;i<=n;i++){
+            if(n%i == 0){
+                while(n%i == 0){
+                    n = n/i;
+                }
+                list.add(i);
+            }
+        }
+        int[] answer = new int[list.size()];
+        for(int j=0;j<list.size();j++){
+            answer[j] = list.get(j);
+        }
+        return answer;
+    }
+
+}
