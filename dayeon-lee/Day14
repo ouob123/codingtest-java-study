@@ -1,0 +1,74 @@
+//가까운 수
+import java.util.Arrays;
+
+class Solution {
+    public int solution(int[] array, int n) {
+        Arrays.sort(array);
+
+        int answer = array[0]; 
+        int minDiff = smallNum(array[0], n); 
+
+        for(int i = 1; i < array.length; i++) { 
+            int currentDiff = smallNum(array[i], n); 
+
+            // 현재 요소의 차이가 이전 최소 차이보다 작으면 업데이트
+            if(currentDiff < minDiff) {
+                minDiff = currentDiff; 
+                answer = array[i]; 
+            }
+        }
+
+        return answer;
+    }
+
+    public int smallNum(int num, int n) {
+        if(num >= n) return num - n;
+        else return n - num;
+    }
+}
+
+//369게임
+class Solution {
+    public int solution(int order) {
+        int answer = 0;
+        int num = 0;
+        while(order > 0){
+            num = order%10;
+            if(num == 3 || num == 6 || num == 9){
+                answer++;
+            }
+            order = order/10;
+
+        }
+        return answer;
+    }
+}
+
+//암호 해독
+class Solution {
+    public String solution(String cipher, int code) {
+        String answer = "";
+        int i = code;
+        while(i <= cipher.length()){
+            answer += cipher.charAt(i-1);
+            i += code;
+        }
+        return answer;
+    }
+}
+
+//대문자와 소문자
+class Solution {
+    public String solution(String my_string) {
+        String answer = "";
+        for(int i=0;i<my_string.length();i++){
+            char currentChar = my_string.charAt(i);
+            if(currentChar< 'a') { //대문자
+                answer += (char)(currentChar + ('a' - 'A'));
+            }else{ //소문자
+                answer += (char)(currentChar - ('a' - 'A'));
+            }
+        }
+        return answer;
+    }
+}
