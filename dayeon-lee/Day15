@@ -1,0 +1,87 @@
+//영어가 싫어요
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
+class Solution {
+    Map<String, Integer> dictionary = new HashMap<>() {{
+        put("zero",0);
+        put("one",1);
+        put("two",2);
+        put("three",3);
+        put("four",4);
+        put("five",5);
+        put("six",6);
+        put("seven",7);
+        put("eight",8);
+        put("nine",9);
+
+    }};
+    
+    public long solution(String numbers) {
+        for (Map.Entry<String, Integer> entry : dictionary.entrySet()) {
+            numbers = numbers.replace(entry.getKey(), entry.getValue().toString());
+        }
+        
+        return Long.parseLong(numbers);
+        
+        
+    }
+}
+
+//인덱스 바꾸기
+class Solution {
+    public String solution(String my_string, int num1, int num2) {
+        StringBuilder sb = new StringBuilder(my_string);
+        
+        char char1 = sb.charAt(num1);
+        char char2 = sb.charAt(num2);
+        
+        sb.setCharAt(num1, char2);
+        sb.setCharAt(num2, char1);
+         
+        return sb.toString();
+    }
+}
+
+//한 번만 등장한 문자
+import java.util.*;
+
+class Solution {
+    public String solution(String s) {
+
+        HashSet<String> set = new HashSet<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            String replace = s.replace(s.charAt(i) + "", "");
+            if(s.length() - replace.length() == 1){
+                set.add(s.charAt(i)+"");
+            }
+        }
+        ArrayList<String> list = new ArrayList<>(set);
+        Collections.sort(list);
+        return String.join("", list);
+    }
+}
+
+//약수 구하기
+class Solution {
+    public int[] solution(int n) {
+        int k = 0;
+        for(int i=1;i<=n;i++){
+            if(n%i == 0) k++;
+        }
+        
+        int [] answer = new int[k];
+        int t = 0;
+        for(int i=1;i<=n;i++){
+            if(n%i == 0){
+                answer[t] = i;
+                t++;
+            }
+        }
+        
+        return answer;
+    }
+}
