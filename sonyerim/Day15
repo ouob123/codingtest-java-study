@@ -1,0 +1,85 @@
+// Day15
+
+// 영어가 싫어요
+class Solution {
+    public long solution(String numbers) {
+        String[] arr = {"zero", "one", "two", "three", "four", 
+                        "five", "six", "seven", "eight", "nine"};
+        
+        for (int i = 0; i < arr.length; i++) {
+            numbers = numbers.replaceAll(arr[i], String.valueOf(i));
+        }
+        
+        return Long.parseLong(numbers);
+    }
+}
+
+// 인덱스 바꾸기
+class Solution {
+    public String solution(String my_string, int num1, int num2) {
+        String answer = "";
+        String[] arr = my_string.split("");
+        String temp = "";
+      
+        temp = arr[num1];
+        arr[num1] = arr[num2];
+        arr[num2] = temp;
+        
+        for (int i = 0; i < arr.length; i++) {
+            answer += arr[i];
+        }
+        
+        return answer;
+    }
+}
+
+// 한 번만 등장한 문자
+import java.util.*;
+
+class Solution {
+    public String solution(String s) {
+        String answer = "";
+        String[] arr=s.split("");
+        int cnt = 0;
+        
+        Arrays.sort(arr);
+        
+        for (int i = 0; i < arr.length; i++) {
+            cnt = 0;
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[i].equals(arr[j])) {
+                    cnt++;
+                }
+            }
+            if (cnt == 1) {
+                answer += arr[i];
+            }
+        }
+        return answer;
+    }
+}
+
+// 약수 구하기
+class Solution {
+    public int[] solution(int n) {
+        int idx = 0;
+        
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                idx++;    
+            }
+        }
+        
+        int[] answer = new int[idx];
+        
+        int k = 0;
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                answer[k] = i;
+                k++;
+            }
+        }
+        
+        return answer;
+    }
+}
