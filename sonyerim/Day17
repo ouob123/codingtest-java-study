@@ -1,0 +1,87 @@
+// Day17
+
+// 숫자 찾기
+class Solution {
+    public int solution(int num, int k) {
+        int answer = -1;
+        String s = Integer.toString(num);
+        String[] arr = s.split("");
+        
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].equals(Integer.toString(k))) {
+                answer = i + 1;
+                break;
+            }
+        }
+        return answer;
+    }
+}
+
+// n의 배수 고르기
+class Solution {
+    public int[] solution(int n, int[] numlist) {
+        int idx = 0;
+        
+        for (int i = 0; i < numlist.length; i++) {
+            if (numlist[i] % n == 0) {
+                idx++;
+            }
+        }
+        
+        int[] answer = new int[idx];
+        int k = 0;
+        
+        for (int i = 0; i < numlist.length; i++) {
+            if (numlist[i] % n == 0) {
+                answer[k] = numlist[i];
+                k++;
+            }
+        }
+        
+        return answer;
+    }
+}
+
+// 자릿수 더하기
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        
+        while(n > 0) {
+            answer += n%10;
+            n /= 10;
+        }
+        
+        return answer;
+    }
+}
+
+// OX퀴즈
+class Solution {
+    public String[] solution(String[] quiz) {
+        String[] answer = new String[quiz.length];
+        
+        for (int i = 0; i < quiz.length; i++) {
+            String[] s = quiz[i].split(" ");
+            
+            if (s[1].equals("+")) {
+                if (Integer.parseInt(s[0]) + Integer.parseInt(s[2]) == Integer.parseInt(s[4])) {
+                    answer[i] = "O";
+                }
+                else {
+                    answer[i] = "X";
+                }
+            }
+            else if (s[1].equals("-")) {
+                if (Integer.parseInt(s[0]) - Integer.parseInt(s[2]) == Integer.parseInt(s[4])) {
+                    answer[i] = "O";
+                }
+                else {
+                    answer[i] = "X";
+                }
+            }
+        }
+    
+        return answer;
+    }
+}
