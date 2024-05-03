@@ -1,0 +1,62 @@
+// Day19
+
+// 7의 개수
+import java.util.*;
+
+class Solution {
+    public int solution(int[] array) {
+        int answer = 0;
+        String str = Arrays.toString(array);
+        for(int i = 0; i < str.length(); i++) {
+            if(str.charAt(i) == '7'){
+                answer++;
+            }
+        }
+        return answer;
+    }
+}
+ 
+// 잘라서 배열로 저장하기
+class Solution{
+    public String[] solution(String my_str, int n){
+       int cnt = (my_str.length() + n - 1) / n;
+       String[] answer = new String[cnt];
+
+       for(int i = 0; i < cnt; i++){
+          int start = n * i;
+          int end = 0;
+          if(start + n >= my_str.length()){
+              end = my_str.length();
+          } else {
+              end = start + n;
+          }
+          answer[i] = my_str.substring(start, end);
+      }
+      return answer;
+   }
+}
+
+// 중복된 숫자 개수
+class Solution {
+    public int solution(int[] array, int n) {
+        int answer = 0;
+        
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == n) answer++;
+        }
+        return answer;
+    }
+}
+
+// 머쓱이보다 키 큰 사람
+class Solution {
+    public int solution(int[] array, int height) {
+        int answer = 0;
+        for(int i =0; i<array.length; i++){
+            if(height < array[i]){
+                answer += 1;
+            }
+        }
+        return answer;
+    }
+}
