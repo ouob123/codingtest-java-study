@@ -1,10 +1,9 @@
 // 7의 개수
 class Solution {
     public int solution(int[] array) {
-        int answer = 0; // 7의 개수를 저장할 변수
+        int answer = 0;
         
         for (int number : array) {
-            // 현재 숫자에서 7의 개수를 세어 count에 더함
             while (number > 0) {
                 if (number % 10 == 7) {
                     answer++;
@@ -13,7 +12,6 @@ class Solution {
             }
         }
         
-        // 결과 출력
         return answer;
     }
 }
